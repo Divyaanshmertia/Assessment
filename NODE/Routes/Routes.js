@@ -20,10 +20,10 @@ Router.get("/getdata/:postId", (req, res) => {
   Posts.find({ _id: postId })
     .then((post) => {
       console.info("Post has been found");
-      return Post.find({ commets })
+      return Post.find({ commet })
         .then((post) => {
           console.info("AVALAIBLE Comments ARE:");
-          return res.status(200).send({ comments });
+          return res.status(200).send({ comment });
         })
         .catch(() => {
           console.error(" error");
@@ -32,7 +32,7 @@ Router.get("/getdata/:postId", (req, res) => {
     })
     .catch(() => {
       console.error("error has occured");
-      return res.status(500).send("No theater Found");
+      return res.status(500).send("No Comment Found");
     });
 });
 module.exports = router;

@@ -14,9 +14,9 @@ const CustomPage = (props) => {
   useEffect(() => {
     const fetchMovies = async () => {
       await Axios.get(`"/getdata/${postId}`)
-        .then(({ data: foundMovies }) => {
-          console.info("foundMovies");
-          setCards(foundMovies);
+        .then(({ data: foundComment }) => {
+          console.info("foundComment");
+          setCards(foundComment);
         })
         .catch((error) => {
           console.error("Some error", error);
@@ -28,7 +28,7 @@ const CustomPage = (props) => {
   return (
     <div>
       <div>
-        <h1 style={{ paddingTop: "39px" }}>{cards.comments}</h1>
+        <h1 style={{ paddingTop: "39px" }}>{cards.comment}</h1>
       </div>
     </div>
   );
